@@ -1,0 +1,30 @@
+{
+  "name": "douyin-search-general",
+  "version": "1.0.0",
+  "description": "抖音通用搜索，根据关键词，获取抖音搜索结果，并解析搜索结果中各关注数据",
+  "main": "scripts/search.js",
+  "scripts": {
+    "search": "node scripts/search.js"
+  },
+  "keywords": [
+    "douyin",
+    "search",
+    "social",
+    "chinese"
+  ],
+  "author": "guaikei.com & why",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  },
+  "openclaw": {
+    "require": {
+      "bins": [
+        "node"
+      ],
+      "env": [
+        "GUAIKEI_API_TOKEN"
+      ]
+    }
+  }
+}
