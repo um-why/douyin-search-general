@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-require("dotenv").config();
-
 const utils = require("../lib/utils");
 const key = require("../lib/key");
 const douyin = require("../lib/douyin");
