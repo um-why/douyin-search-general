@@ -1,7 +1,7 @@
 ---
 name: douyin-search-keyword
 description: 抖音公开内容智能搜索，精准检索视频/图文/用户数据，支持多维度排序与时间筛选，输出结构化JSON/Markdown，助力短视频营销、竞品分析与热点追踪。
-version: 1.1.0
+version: 1.1.1
 license: MIT
 metadata:
   openclaw:
@@ -93,22 +93,28 @@ metadata:
           description: "搜索结果总数"
         - name: timestamp
           type: string
+          required: true
           description: "搜索执行时间（本地化字符串）"
         - name: sort
           type: number
+          required: true
           description: "排序依据: 0-综合|1-最多点赞|2-最新发布"
         - name: time
           type: number
+          required: true
           description: "发布时间筛选: 0-全部|1-1天内|7-7天内|180-半年内"
         - name: limit
           type: number
+          required: true
           description: "请求返回结果数量"
         - name: output_format
           type: string
+          required: true
           enum: ["json", "markdown"]
           description: "输出格式"
         - name: message
           type: string
+          required: true
           description: "提示信息或错误信息"
         - name: error_code
           type: string
@@ -223,11 +229,11 @@ metadata:
 
 ### 1.3 适用场景
 
-| 场景           | 用户痛点             | 技能如何解决                             |
-| :------------- | :------------------- | :--------------------------------------- |
+|      场景      |       用户痛点       |               技能如何解决               |
+| :------------: | :------------------: | :--------------------------------------: |
 | **短视频营销** | 缺乏爆款视频创意灵感 | 一键获取“抖音热门”视频数据，分析热门趋势 |
-| **竞品分析**   | 难以追踪竞品内容策略 | 精准搜索竞品账号视频，分析互动数据       |
-| **热点追踪**   | 错过热点话题黄金期   | 实时搜索“抖音热门”话题，掌握最新动态     |
+|  **竞品分析**  | 难以追踪竞品内容策略 |    精准搜索竞品账号视频，分析互动数据    |
+|  **热点追踪**  |  错过热点话题黄金期  |   实时搜索“抖音热门”话题，掌握最新动态   |
 
 - 链接提取：直接获取视频下载地址和图文原始链接
 

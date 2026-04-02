@@ -1,7 +1,7 @@
 {
   "name": "douyin-search-keyword",
-  "version": "1.1.0",
-  "description": "抖音搜索，指定关键词，获取抖音搜索结果，并解析搜索结果中各关键数据",
+  "version": "1.1.1",
+  "description": "抖音公开内容智能搜索，精准检索视频/图文/用户数据,支持多维度排序与时间筛选,输出结构化JSON/Markdown,助力短视频营销、竞品分析与热点追踪",
   "main": "scripts/search.js",
   "scripts": {
     "search": "node scripts/search.js"

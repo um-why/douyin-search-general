@@ -5,8 +5,6 @@ const key = require("../lib/key");
 const douyin = require("../lib/douyin");
 const fs = require("fs");
 const path = require("path");
-const { exec } = require("child_process");
-const { start } = require("repl");
 
 /**
  * 打印帮助信息
@@ -148,6 +146,7 @@ async function main() {
       limit: limit,
       output_format: output,
       timestamp: new Date().toLocaleString(),
+      results: [],
     };
     console.log(JSON.stringify(errorOutput, null, 2));
     return;
@@ -186,9 +185,8 @@ async function main() {
     total: searchTask.length,
     timestamp: new Date().toLocaleString(),
     openclaw_metadata: {
-      skill_version: "1.1.0",
+      skill_version: "1.1.1",
       runtime_version: process.versions.node,
-      execution_id: process.env.OPENCLAW_EXECUTION_ID || "local",
       execution_time: Date.now() - startTime,
     },
     results: searchTask,
