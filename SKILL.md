@@ -10,7 +10,7 @@ metadata:
     tags: ["douyin", "search", "crawler", "data-mining", "social-media"]
     schemaVersion: "1.1"
     runtime: "nodejs@16+"
-    entrypoint: "scripts/search.js"
+    entrypoint: "src/douyin/search-cli.js"
     requires:
       bins: ["node"]
       env: ["GUAIKEI_API_TOKEN"]
@@ -153,31 +153,31 @@ metadata:
         description: "输出格式：json(默认)、markdown"
     examples:
       - name: 基础搜索
-        command: "node scripts/search.js AI"
+        command: "node src/douyin/search-cli.js AI"
         description: 搜索关键词"AI"的抖音内容，返回10条综合排序结果，JSON格式输出
         outputFormat: json
       - name: 带空格的关键词搜索
-        command: 'node scripts/search.js "AI 教程"'
+        command: 'node src/douyin/search-cli.js "AI 教程"'
         description: 搜索关键词"AI 教程"的抖音内容，返回10条综合排序结果
         outputFormat: json
       - name: 按最多点赞排序搜索
-        command: "node scripts/search.js AI --sort 1"
+        command: "node src/douyin/search-cli.js AI --sort 1"
         description: 搜索关键词"AI"，返回10条最多点赞的抖音内容
         outputFormat: json
       - name: 筛选近1天发布的内容
-        command: "node scripts/search.js AI --time 1"
+        command: "node src/douyin/search-cli.js AI --time 1"
         description: 搜索关键词"AI"，返回近1天内发布的10条抖音内容
         outputFormat: json
       - name: 自定义返回结果数量
-        command: "node scripts/search.js AI --limit 20"
+        command: "node src/douyin/search-cli.js AI --limit 20"
         description: 搜索关键词"AI"，返回20条综合排序的抖音内容
         outputFormat: json
       - name: Markdown格式输出
-        command: "node scripts/search.js AI --output markdown"
+        command: "node src/douyin/search-cli.js AI --output markdown"
         description: 搜索关键词"AI"，返回10条结果并以Markdown格式输出
         outputFormat: markdown
       - name: 复杂多参数搜索
-        command: 'node scripts/search.js --keyword "AI 教程" --sort 2 --time 180 --limit 20'
+        command: 'node src/douyin/search-cli.js --keyword "AI 教程" --sort 2 --time 180 --limit 20'
         description: 搜索关键词"AI 教程"，返回半年内最新发布的20条抖音内容
         outputFormat: json
     capabilities:
@@ -268,7 +268,7 @@ metadata:
 ### 2.2 基础语法
 
 ```bash
-# 语法：node scripts/search.js [关键词] [选项]
+# 语法：node src/douyin/search-cli.js [关键词] [选项]
 ```
 
 ### 2.3 选项说明
@@ -286,19 +286,19 @@ metadata:
 
 ```bash
 # 示例1：基础搜索(JSON格式)
-node scripts/search.js AI
+node src/douyin/search-cli.js AI
 # 示例2：带空格的关键词
-node scripts/search.js "AI 教程"
+node src/douyin/search-cli.js "AI 教程"
 # 示例3：自定义排序(最多点赞)
-node scripts/search.js AI --sort 1
+node src/douyin/search-cli.js AI --sort 1
 # 示例4：自定义发布时间(半年)
-node scripts/search.js "AI 模型" --time 180
+node src/douyin/search-cli.js "AI 模型" --time 180
 # 示例5：自定义返回结果数量(20条)
-node scripts/search.js AI --limit 20
+node src/douyin/search-cli.js AI --limit 20
 # 示例6：自定义输出格式(Markdown)
-node scripts/search.js "AI 教程" --output markdown
+node src/douyin/search-cli.js "AI 教程" --output markdown
 # 示例7：复杂搜索(最新+近半年+20条结果+JSON格式)
-node scripts/search.js --keyword "AI 教程" --sort 2 --time 180 --limit 20
+node src/douyin/search-cli.js --keyword "AI 教程" --sort 2 --time 180 --limit 20
 ```
 
 ## 3. 输出数据规范

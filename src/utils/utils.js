@@ -2,6 +2,10 @@
  * 通用工具函数模块
  */
 
+/**
+ * 打印横幅信息
+ * @description 在控制台显示抖音搜索关键词的ASCII艺术横幅
+ */
 function printBanner() {
   console.log("╔════════════════════════════════════════════╗");
   console.log("║                                            ║");
@@ -11,6 +15,11 @@ function printBanner() {
   console.log("");
 }
 
+/**
+ * 打印带颜色的日志信息
+ * @param {string} level - 日志级别 (INFO|SUCCESS|WARN|ERROR)
+ * @param {string} message - 日志消息内容
+ */
 function printLog(level, message) {
   const colorMap = {
     INFO: "\x1b[34m",
@@ -25,8 +34,20 @@ function printLog(level, message) {
 
 module.exports = {
   printBanner,
+  /**
+   * 打印信息日志(蓝色)
+   */
   printInfo: (msg) => printLog("INFO", msg),
+  /**
+   * 打印成功日志(绿色)
+   */
   printSuccess: (msg) => printLog("SUCCESS", msg),
+  /**
+   * 打印错误日志(红色)
+   */
   printError: (msg) => printLog("ERROR", msg),
+  /**
+   * 打印警告日志(黄色)
+   */
   printWarn: (msg) => printLog("WARN", msg),
 };
